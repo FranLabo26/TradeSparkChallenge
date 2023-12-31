@@ -16,5 +16,5 @@ Docker and docker-compose. for installation instructions see [here](https://docs
 3. Run `docker-compose up` in the root directory of the repository
 4. enter to localhost:4200 in your browser
 5. Your has to see the following screen:
-![example image](TradeSparkChallenge/tradesparkChallange/images/main_screen.png)
+![example image](tradesparkChallange/images/main_screen.png)
 
