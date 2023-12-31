@@ -12,8 +12,9 @@ Docker and docker-compose. for installation instructions see [here](https://docs
 
 ### Run the challange
 1. Clone the repository
-2. Run `docker-compose up` in the root directory of the repository
-3. enter to localhost:4200 in your browser
-4. Your has to see the following screen:
+2. Move to the folder where the "docker-compose" file is located
+3. Run `docker-compose up` in the root directory of the repository
+4. enter to localhost:4200 in your browser
+5. Your has to see the following screen:
 ![example image](images/main_screen.png)
 
