@@ -1,0 +1,66 @@
+<div class="background-image">
+    <!-- Encabezado de la página -->
+    <h1> Book Store </h1>
+
+    <!-- Formulario con tres campos de búsqueda -->
+    <form (ngSubmit)="filterBooks()" class="filter-form">
+        <!-- Campo de búsqueda por título -->
+        <div class="filter-input">
+            <label for="titleInput">Buscar por Título:</label>
+            <input type="text" id="titleInput" [(ngModel)]="titleTerm" name="titleTerm" class="large-input">
+        </div>
+
+        <!-- Campo de búsqueda por autor -->
+        <div class="filter-input">
+            <label for="authorInput">Buscar por Autor:</label>
+            <input type="text" id="authorInput" [(ngModel)]="authorTerm" name="authorTerm" class="large-input">
+        </div>
+
+        <!-- Campo de búsqueda por categoría -->
+        <div class="filter-input">
+            <label for="categoryInput">Buscar por Categoría:</label>
+            <input type="text" id="categoryInput" [(ngModel)]="categoryTerm" name="categoryTerm" class="large-input">
+        </div>
+
+        <!-- Botón para activar la función de filtrar -->
+        <button type="submit" class="filter-button">Filtrar</button>
+    </form>
+
+    <!-- Lista de libros filtrados -->
+    <div class="book-list">
+        <div>
+            <table>
+                <!-- Encabezados de la tabla -->
+                <thead>
+                    <tr>
+                        <th>Book Title</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <!-- Cuerpo de la tabla con libros filtrados -->
+                <tbody>
+                    <tr *ngFor="let book of filteredBooks">
+                        <td>{{ book["title"] }}</td>
+                        <td>{{ book["author"]["name"] }}</td>
+                        <td>{{ categoriesToString(book['categories']) }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Formulario para eliminar categorías de libros -->
+    <div class="remove-category-form">
+        <!-- Campo para el nombre del libro a afectar -->
+        <label for="bookNameToRemove">Nombre del Libro:</label>
+        <input type="text" id="bookNameToRemove" [(ngModel)]="bookNameToRemove" name="bookNameToRemove" class="small-input">
+    
+        <!-- Campo para la categoría a eliminar -->
+        <label for="categoryToRemove">Categoría a Eliminar:</label>
+        <input type="text" id="categoryToRemove" [(ngModel)]="categoryToRemove" name="categoryToRemove" class="small-input">
+    
+        <!-- Botón para activar la función de eliminar categorías de libro/s -->
+        <button type="button" (click)="removeCategoryFromAllBooks()">Eliminar Categoría de Libro/s</button>
+    </div>
+</div>
